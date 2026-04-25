@@ -1,4 +1,4 @@
-import "./Buscador.css";
+import "./buscador.css";
 import { useState } from "react";
 
 const Buscador = ({ buscarPokemon }) => {

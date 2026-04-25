@@ -1,4 +1,4 @@
-import "./Filtros.css";
+import "./filtros.css";
 
 const Filtros = ({ filtrarPorTipo }) => {
     return (

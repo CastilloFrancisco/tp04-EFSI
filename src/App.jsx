@@ -36,7 +36,7 @@ function App() {
   const obtenerLista = async () => {
     try {
       const resultado = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=10"
+        "https://pokeapi.co/api/v2/pokemon?limit=12"
       );
       const data = await resultado.json();
 
@@ -68,7 +68,7 @@ function App() {
       );
       const data = await resultado.json();
 
-      const pokemons = data.pokemon.slice(0, 10);
+      const pokemons = data.pokemon.slice(0, 12);
 
       const detalles = await Promise.all(
         pokemons.map(async (p) => {
@@ -90,7 +90,7 @@ function App() {
         <Buscador buscarPokemon={buscarPokemon} />
         <Filtros filtrarPorTipo={filtrarPorTipo} />
 
-        <button onClick={obtenerLista}>Cargar lista 'Primeros 10'</button>
+        <button onClick={obtenerLista}>Cargar la lista</button>
 
         {error && <Error mensaje={error} />}
 

@@ -1,39 +1,25 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import './card.css';
+import "./card.css";
 import Datos from "../Datos";
 
-export default function Card({ nom }) {
-    const [datos, setDatos] = useState(null);
+const Card = ({ pokemon }) => {
+  if (!pokemon) return null;
 
-    useEffect(() => {
-        const obtenerDatos = async () => {
-            try {
-                const res = await axios.get(
-                    `https://pokeapi.co/api/v2/pokemon/bulbasaur` //front_default:
-                );
-                setDatos(res.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+  const tipoPrincipal = pokemon.types?.[0]?.type.name;
 
-        obtenerDatos();
-    }, [nombre]);
+  return (
+    <div className={`Card type-${tipoPrincipal}`}>
+      <h3>{pokemon.name}</h3>
 
-    let tipos = datos.types[0].type.name + ", " + datos.types[1].type.name
+      <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
 
-    if (!datos) return <p>Cargando...</p>;
-    return (
-        <>
-        <img src={datos.sprites.front_default} alt="" />
-            <Datos
-                nombre={datos.species.name}
-                peso={datos.weight}
-                tamaño={datos.height}
-                tipos={tipos}>
-            </Datos>
-        </>
-    )
-}
+      <Datos
+        nombre={pokemon.name}
+        peso={pokemon.weight}
+        tamaño={pokemon.height}
+        tipos={pokemon.types?.map((t) => t.type.name).join(", ")}
+      />
+    </div>
+  );
+};
 
+export default Card;

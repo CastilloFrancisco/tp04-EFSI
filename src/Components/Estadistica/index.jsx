@@ -1,4 +1,4 @@
-import './datos.css'
+import './estadistica.css'
 
 export default function Estadistica({ texto }) {
   return (

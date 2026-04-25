@@ -1,16 +1,18 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import Estadistica from "../Estadistica";
+import "./datos.css";
 
-export default function Datos({ nombre, peso, tamaño, tipos}) {
+export default function Datos({ peso, tamaño, tipos }) {
 
-  if (!nombre || nombre || peso || tamaño || tipo1) return <p>Cargando...</p>;
-    return (
+  if (!peso || !tamaño || !tipos) {
+    return <p>Cargando...</p>;
+  }
+
+  return (
     <>
-      <Estadistica>{nombre}</Estadistica>
-      <Estadistica texto={ tipos }/>
-      <Estadistica texto={ peso }/>
-      <Estadistica texto={ tamaño }/>
+   
+      <Estadistica texto={`Tipo: ${tipos}`} />
+      <Estadistica texto={`Peso: ${peso} libras`} />
+      <Estadistica texto={`Altura: ${tamaño} pies (creo)`} />
     </>
-  )
+  );
 }
-

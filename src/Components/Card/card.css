@@ -1,0 +1,36 @@
+.Card {
+    width: 100%;
+  max-width: 220px;
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  background-color: var(--card-color, var(--type-default));
+  transition: transform 0.2s ease;
+}
+
+.Card:hover {
+  transform: scale(1.05);
+}
+
+.Card img {
+  width: 120px;
+  height: 120px;
+}
+
+.type-fire    { --card-color: var(--type-fire); }
+.type-water   { --card-color: var(--type-water); }
+.type-grass   { --card-color: var(--type-grass); }
+.type-electric{ --card-color: var(--type-electric); }
+.type-ice     { --card-color: var(--type-ice); }
+.type-fighting{ --card-color: var(--type-fighting); }
+.type-poison  { --card-color: var(--type-poison); }
+.type-ground  { --card-color: var(--type-ground); }
+.type-flying  { --card-color: var(--type-flying); }
+.type-psychic { --card-color: var(--type-psychic); }
+.type-bug     { --card-color: var(--type-bug); }
+.type-rock    { --card-color: var(--type-rock); }
+.type-ghost   { --card-color: var(--type-ghost); }
+.type-dragon  { --card-color: var(--type-dragon); }
+.type-dark    { --card-color: var(--type-dark); }
+.type-steel   { --card-color: var(--type-steel); }
+.type-fairy   { --card-color: var(--type-fairy); }
